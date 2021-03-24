@@ -17,11 +17,15 @@ const iniciar = () => {
     },
     {
       input: character("como te llamas"),
-      output: { me_llamo_robin: 1 },
+      output: { me_llamo_robin: 1, bien_y_tu_como_estas: 0 },
+    },
+    {
+      input: character("cual es tu nombre"),
+      output: { me_llamo_robin: 1, bien_y_tu_como_estas: 0 },
     },
     {
       input: character("como estas"),
-      output: { bien_y_tu_como_estas: 1 },
+      output: { bien_y_tu_como_estas: 1, me_llamo_robin: 0 },
     },
     {
       input: character("cuentame un chiste"),
@@ -62,18 +66,22 @@ const iniciar = () => {
       if (respuesta[index] > 0.75) {
         chat.innerHTML += bot(index.split("_").join(" "));
         input.value = "";
-        contenedorChat.scroll(0,contenedorChat.clientHeight);
+        contenedorChat.scroll(0, contenedorChat.clientHeight);
         return;
       }
     }
     chat.innerHTML += bot("no entiendo");
     input.value = "";
-    contenedorChat.scroll(0,contenedorChat.clientHeight);
+    contenedorChat.scroll(0, chat.clientHeight -1);
   });
 };
 
 const character = (string) => {
-  return string.trim().split("").map(integer);
+  let texto = string.trim().split("").map(integer);
+  while (100 > texto.length) {
+    texto.push(0);
+  }
+  return texto;
 };
 
 const bot = (string) => {
