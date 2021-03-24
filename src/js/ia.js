@@ -63,7 +63,7 @@ const iniciar = () => {
     chat.innerHTML += usuario(input.value);
     const respuesta = redNeuronal.run(character(input.value));
     for (let index in respuesta) {
-      if (respuesta[index] > 0.75) {
+      if (respuesta[index] > 0.65) {
         chat.innerHTML += bot(index.split("_").join(" "));
         input.value = "";
         contenedorChat.scroll(0, contenedorChat.clientHeight);
