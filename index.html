@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <title>chat bot</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-sm-5 col-md-6 col-lg-6 d-none d-sm-flex d-md-flex d-lg-flex align-items-center vh-100"
+        >
+          <div>
+            <div class="titulo">Chat-Bot con BrainJS</div>
+            <img src="src/images/bot-bg.png" class="img-fluid" />
+          </div>
+        </div>
+        <div
+          class="offset-sm-1 offset-md-2 col-sm-6 col-md-4 d-flex align-items-center vh-100"
+        >
+          <div class="shadow">
+            <div class="vh-50 w-100 bg-light" id="contenedor-chat">
+              <ul class="chat" id="chat">
+                <li  class="chat-bot d-flex justify-content-start  align-items-center w-100 p-2">
+                  <img src="src/images/bot.svg" alt="" class="chat-img" />
+                  <div class="chat-body px-2">
+                      <p>
+                          Escribe algo
+                      </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <form id="texto-usuario">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="texto"
+                  id="texto"
+                  placeholder=""
+                  aria-label=""
+                />
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit" aria-label="">
+                    Enviar
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/js/brain-browser.min.js"></script>
+    <script src="src/js/ia.js"></script>
+  </body>
+</html>
